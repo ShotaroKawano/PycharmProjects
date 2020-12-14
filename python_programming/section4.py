@@ -39,3 +39,26 @@ print('x =', x)
 
 print(id(x))
 print(id(y))
+
+
+
+num_tuple = (10, 20)
+print(num_tuple)
+
+x, y = num_tuple
+print(x, y)
+
+a = 100
+b = 200
+a,b = b,a
+print(a,b)
+
+
+
+my_friend = {'A','B','C'}
+A_friend = {'B','D','F'}
+print(my_friend & A_friend)
+
+f = ['apple', 'banana', 'apple', 'banana']
+kind = set(f)
+print(kind)
