@@ -42,13 +42,12 @@ def wirteCsv(name, count):
         writer.writerow({'Name': name, 'Count': count})
 
 def readCsv():
-    restaurant_list = dict()
+    recommend_list = dict()
     with open('recommend.csv', 'r') as csv_file:
         reader = csv.DictReader(csv_file)
         for row in reader:
-            restaurant_list[row['Name']] = row['Count']
-        print(restaurant_list)
-    return restaurant_list
+            recommend_list[row['Name']] = row['Count']
+    return recommend_list
 
 
 say()
@@ -62,6 +61,8 @@ while True:
         break
 
 if os.path.exists('recommend.csv'):
+    recommend_list = readCsv()
+    print(sorted(recommend_list, key=recommend_list.get, reverse=True))
     while True:
         say2('apple')
         word = ''
@@ -86,5 +87,4 @@ while True:
 
 
 say4(user_name)
-readCsv()
 
